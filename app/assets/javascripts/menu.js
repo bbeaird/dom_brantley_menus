@@ -2,7 +2,7 @@ var Menu = {
   init: function() {
     $('a.new-menu').on('click', this.toggleMenuForm);
 
-    $('ul.menus').on('click', 'li', this.toggleMenuItemForm);
+    $('ul.menus').find('a').on('click', this.toggleMenuItemForm);
 
     $('form#new_menu').on('ajax:success', this.appendMenu);
     $('form#new_menu').on('ajax:error', this.appendErrors);
@@ -15,7 +15,10 @@ var Menu = {
 
    toggleMenuItemForm: function(e) {
     e.preventDefault();
-    $(this).children("#hiddenshit").toggleClass('hidden');
+    console.log("hello");
+    console.log(this);
+    $(this).siblings('#hiddenshit').toggleClass('hidden');
+
   },
 
   appendMenu: function(event, data, status, xhr) {
