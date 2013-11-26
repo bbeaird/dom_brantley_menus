@@ -6,6 +6,8 @@ var Menu = {
 
     $('form#new_menu').on('ajax:success', this.appendMenu);
     $('form#new_menu').on('ajax:error', this.appendErrors);
+    $('form#new_item').on('ajax:success', this.appendItem);
+    $('form#new_item').on('ajax:error', this.appendErrors);
   },
 
   toggleMenuForm: function(e) {
@@ -22,11 +24,18 @@ var Menu = {
   },
 
   appendMenu: function(event, data, status, xhr) {
+    console.log(this)
     $('ul.menus').append(data.menu_template);
+    console.log(data)
   },
 
   appendErrors: function(event, xhr, status, error) {
     $('ul.menus').before($.parseJSON(xhr.responseText).error);
+  },
+
+  appendItem: function(event, xhr, status, error) {
+    $('#list-items').append(data.item_template);
+    console.log("Inside append item AJAX!");
   }
 }
 

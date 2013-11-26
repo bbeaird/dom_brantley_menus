@@ -1,6 +1,10 @@
 <%= form_for item, :remote => true do |f| %>
   <%= f.label :item_name %>
   <%= f.text_field :item_name %>
+  <%= f.label :item_price %>
+  <%= f.text_field :item_price %>
+  <%= f.label :menu_id %>
+  <%= f.text_field :menu_id %>
   <%= f.submit %>
 <% end %>
 
