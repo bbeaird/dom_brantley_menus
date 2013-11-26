@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: angel-farts-dev
+  pool: 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: angel-farts-test
+  pool: 
+
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: angel-farts-prod
+  pool: 
+

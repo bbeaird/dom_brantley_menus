@@ -6,6 +6,7 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find params[:id]
+    @test = "THIS IS TO SHOW THAT WE ARE PASSING THIS"
   end
 
   def create

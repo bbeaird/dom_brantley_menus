@@ -1,1 +1,14 @@
-<li class="list-group-item"><%= link_to menu.name, menu %></li>
+<li class="list-group-item"><%= link_to menu.name, menu, remote: true %>
+
+<div id="hiddenshit" class="hidden">
+
+  <ul>
+    <% menu.items.each do |i| %>
+      <%= i.item_name %><br>
+    <% end %>
+  </ul>
+
+  <%= render 'itemform', :item => Item.new %>
+</div>
+
+</li>
